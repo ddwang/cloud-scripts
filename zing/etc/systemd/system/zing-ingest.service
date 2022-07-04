@@ -1,0 +1,12 @@
+[Unit]
+Description=Zing Ingest
+
+[Service]
+ExecStart=/home/zing/zing-ingest/start-ingest.sh
+WorkingDirectory=/home/zing/zing-ingest/
+IgnoreSIGPIPE=false
+KillMode=control-group
+User=zing
+
+[Install]
+WantedBy=multi-user.target
