@@ -15,7 +15,7 @@ date_dir="$(date +'%Y-%m-%d')"
 backup_dump="pg_dump_$date_dir.dump"
 
 cd /tmp
-sudo -u influxdb -H -- rm -rf $backup_dump
+sudo -u postgres -H -- rm -rf $backup_dump
 
 echo ""
 echo ">>> Creating database dump at '$backup_dump'"
