@@ -15,7 +15,7 @@ date_dir="$(date +'%Y-%m-%d')"
 backup_dump="pg_dump_$date_dir.dump"
 
 cd /tmp
-sudo -u postgres -H -- rm -rf $backup_dump
+sudo rm -rf $backup_dump
 
 echo ""
 echo ">>> Creating database dump at '$backup_dump'"
@@ -23,5 +23,5 @@ sudo -u postgres -H -- pg_dump -F c $db_name > $backup_dump
 
 echo ""
 echo ">>>"
-ls -l $backup_dump
+ls -lh $backup_dump
 echo ""

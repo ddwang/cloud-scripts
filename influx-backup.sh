@@ -10,15 +10,14 @@ if [ -z "$1" ]
 fi
 
 db_name=$1
-  
 date_dir="$(date +'%Y-%m-%d')"
 
 backup_dir="influxd_backup_$date_dir"
 backup_tar="influxd_backup_$date_dir.tar"
 
 cd /tmp
-sudo -u influxdb -H -- rm -rf $backup_dir
-sudo -u influxdb -H -- rm -rf $backup_tar
+sudo rm -rf $backup_dir
+sudo rm -rf $backup_tar
 
 echo ""
 echo ">>> Creating portable backup at '$backup_dir'"
@@ -30,5 +29,5 @@ sudo -u influxdb -H -- tar cvf "$backup_tar" $backup_dir
 
 echo ""
 echo ">>>"
-ls -l $backup_tar
+ls -lh $backup_tar
 echo ""
